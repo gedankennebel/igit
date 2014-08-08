@@ -22,4 +22,4 @@ mv gitool.sh gitool
 mv gitool /usr/local/bin
 ```
 
-Then use it from anywhere like: gitool -r
+Then use it from anywhere like: ``` gitool -r ```
