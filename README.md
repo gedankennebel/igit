@@ -16,9 +16,10 @@ Options:
 * -a rebase all branches
 * -m rebase and merge current branch to master using squash
 
-For convinience copy this script to your bin folder:
-
+For convinience copy this script to your bin folder. Here is how to do for Mac OSX:
+```
 mv gitool.sh gitool
 mv gitool /usr/local/bin
+```
 
 Then use it from anywhere like: gitool -r
