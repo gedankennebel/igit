@@ -1,5 +1,5 @@
-gitool
-======
+igit
+====
 
 The little rebase tool for lazy people
 --------------------------------------
