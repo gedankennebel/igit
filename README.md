@@ -15,6 +15,8 @@ Options:
 * -i perform rebase with interactive rebase mode
 * -a rebase all branches
 * -m rebase and merge current branch to master using squash
+* -d delete current branch and go to master
+* -v print version
 
 For convinience copy this script to your bin folder. Here is how to do for Mac OSX:
 ```
