@@ -1,4 +1,7 @@
 #!/bin/bash
+
+version=0.2.1
+
 if [ "$1" == "-help" ]
 then
  printf "\e[32m \nThe little rebase tool for lazy people\n"
@@ -13,6 +16,8 @@ then
  printf "* -i perform rebase with interactive rebase mode\n"
  printf "* -a rebase all branches\n"
  printf "* -m rebase and merge current branch to master using squash\n"
+ printf "* -d delete current branch and go to master\n"
+ printf "* -v print version\n"
  printf " \n"
  exit 1
 fi
@@ -89,6 +94,21 @@ if [ "$1" == "-r" ]
   doRebase "$current_branch"
 fi
 
+# delete current branch and go to master
+if [ "$1" == "-d" ]
+ then
+ current_branch=$(git symbolic-ref HEAD --short)
+ git checkout master
+ git branch -D "$current_branch"
+ printf "\e[32m\n%s has been deleted.. RIP!\n\n\e[0m" $current_branch
+fi
+
+# print version
+if [ "$1" == "-v" ]
+ then
+ printf "igit version %s\n" $version 
+fi
+
 # no parameter: show usage
 if [[ -z "$1" ]]
  then
@@ -97,6 +117,8 @@ if [[ -z "$1" ]]
   echo "-i perform rebase with interactive rebase mode"
   echo "-a rebase all branches"
   echo "-m rebase and merge current branch to master using squash"
+  echo "-d delete current branch and go to master" 
+  echo "-v print version\n" 
   printf " \n"
   exit 1
 fi
