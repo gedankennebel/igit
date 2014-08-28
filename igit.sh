@@ -100,7 +100,7 @@ if [ "$1" == "-d" ]
  current_branch=$(git symbolic-ref HEAD --short)
  git checkout master
  git branch -D "$current_branch"
- printf "\e[32m\n%s has been deleted.. RIP!\n\n\e[0m" $current_branch
+ printf "\e[32m\n%s has been deleted.. RIP! Your are now in master.\n\n\e[0m" $current_branch 
 fi
 
 # print version
